@@ -1,0 +1,7 @@
+filename,label,defect_type
+normal_01.png,0,none
+ink_spot_01.png,1,ink_spot
+missing_ink_01.png,1,missing_ink
+streak_01.png,1,streak
+blur_01.png,1,blur
+ink_spread_01.png,1,ink_spread
