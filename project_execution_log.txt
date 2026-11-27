@@ -1,0 +1,74 @@
+
+==================================================
+PROJECT EXECUTION REPORT
+==================================================
+Date: Wed Nov 25 12:24:49 PM UTC 2026
+Directory: /home/xilinx/printing_defect_project/src
+Command: python3 defect_detector.py --ref ../dataset/reference/normal_ref.png --test ../dataset/reference/normal_ref.png
+Board: Linux pynq 5.15.19-xilinx-v2022.1 #1 SMP PREEMPT Mon Apr 11 17:52:14 UTC 2022 armv7l armv7l armv7l GNU/Linux
+
+---------- DETECTOR PARAMETERS ----------
+width: 640
+height: 480
+blur: 5
+clahe: True
+align: True
+edges: True
+thr_floor: 30
+edge_thr: 60
+min_area: 30
+min_pct: 0.005
+
+---------- EXECUTION OUTPUT ----------
+normal_ref: PASS defect=0.000% blobs=0 thr=30
+  preprocess         84.82 ms
+  align             276.59 ms
+  diff_threshold     96.92 ms
+  morphology         39.67 ms
+  components         28.25 ms
+  decision            2.43 ms
+  annotate            6.80 ms
+  total             535.49 ms
+
+Exit status: 0
+Execution completed: Wed Nov 25 12:25:03 PM UTC 2026
+==================================================
+
+==================================================
+PROJECT EXECUTION REPORT
+==================================================
+Date: Wed Nov 25 12:26:20 PM UTC 2026
+Directory: /home/xilinx/printing_defect_project/src
+Command: python3 live_demo.py --source /dev/video0 --ref ../dataset/reference/normal_ref.png --headless --max-frames 10
+Board: Linux pynq 5.15.19-xilinx-v2022.1 #1 SMP PREEMPT Mon Apr 11 17:52:14 UTC 2022 armv7l armv7l armv7l GNU/Linux
+
+---------- DETECTOR PARAMETERS ----------
+width: 640
+height: 480
+blur: 5
+clahe: True
+align: True
+edges: True
+thr_floor: 30
+edge_thr: 60
+min_area: 30
+min_pct: 0.005
+
+---------- EXECUTION OUTPUT ----------
+[ WARN:0] global ./modules/videoio/src/cap_gstreamer.cpp (2075) handleMessage OpenCV | GStreamer warning: Embedded video playback halted; module source reported: Could not read from resource.
+[ WARN:0] global ./modules/videoio/src/cap_gstreamer.cpp (1053) open OpenCV | GStreamer warning: unable to start pipeline
+[ WARN:0] global ./modules/videoio/src/cap_gstreamer.cpp (616) isPipelinePlaying OpenCV | GStreamer warning: GStreamer: pipeline have not been created
+frame 1: DEFECT 0.368% blobs=2 691.9 ms
+frame 2: DEFECT 0.381% blobs=2 690.7 ms
+frame 3: DEFECT 0.383% blobs=2 689.6 ms
+frame 4: DEFECT 0.382% blobs=2 690.3 ms
+frame 5: DEFECT 0.374% blobs=2 690.8 ms
+frame 6: DEFECT 0.367% blobs=1 676.6 ms
+frame 7: DEFECT 0.371% blobs=2 667.1 ms
+frame 8: DEFECT 0.372% blobs=2 668.2 ms
+frame 9: DEFECT 0.379% blobs=2 665.9 ms
+frame 10: DEFECT 0.369% blobs=1 666.0 ms
+
+Exit status: 0
+Execution completed: Wed Nov 25 12:26:44 PM UTC 2026
+==================================================
